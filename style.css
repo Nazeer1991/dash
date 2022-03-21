@@ -9,3 +9,12 @@ p {
   font-size: 1rem;
   color: darkkhaki;
 }
+
+.phone {
+  width: 300px;
+  height: 300px;
+  background-color: black;
+}
+.phone > h1 {
+  color: white;
+}

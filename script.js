@@ -133,3 +133,92 @@ function getTotal() {
 console.log(getTotal());
 
 //
+
+const tetrominoes = ["Ltetromino", "Ztetromino", "itetromino"];
+
+// pick any tetromino and clg it
+
+const randomNumber = Math.random() * tetrominoes.length;
+
+const randomInteger = Math.floor(randomNumber);
+//Math.floor() rounds DOWN to nearest full integer eg between 1-5 1,2,3,4
+//Math.ceil() rounds UP to neaerst full integer eg 1-5 1,2,3,4,5
+//Math.round() round to nearest integer
+
+console.log(tetrominoes[randomInteger]);
+
+//
+
+const drinksMenu = [
+  "apple",
+  "rosemilk",
+  "sharjah",
+  "fig",
+  "strawberry",
+  "blueberry",
+  "dragon",
+  "pomegranite",
+  "sugarcane",
+  "orange",
+  "pistaMilk",
+  "badamMilk",
+];
+
+// to pick one drink for you randomly
+
+const randomJuiceDecimal = Math.random() * drinksMenu.length;
+const randomJuiceInteger = Math.floor(randomJuiceDecimal);
+
+console.log(drinksMenu[randomJuiceInteger]);
+
+// DATE
+
+const today = new Date();
+const Year = today.getFullYear();
+console.log(Year);
+const isoString = today.toISOString();
+console.log(isoString);
+
+// setTimeout executes function after set time
+let time = 3000; //3 secs alwyas in milliseconds
+
+function sayHi() {
+  console.log("Hi! Bro so cool!");
+}
+setTimeout(sayHi, time);
+
+// bubble disappear in 10sec
+
+const bubble = document.querySelector(".bubble");
+
+function hideBubble() {
+  bubble.style.display = "none";
+}
+
+// setTimeout(hideBubble, 10000);
+
+// setInterval executes function in every set interval
+
+const text = "Alert 📢 ";
+const times = 3000;
+
+function showAlert() {
+  const textDisplay = document.createElement("div");
+  textDisplay.innerHTML = text;
+  bubble.appendChild(textDisplay);
+}
+
+// setInterval(showAlert, times);
+
+// move bubble in set interval
+let move = 10;
+function moveBubble() {
+  move += 50;
+  bubble.style.left = move + "px";
+
+  if (move > 1500) {
+    clearInterval(timerId);
+  }
+}
+
+let timerId = setInterval(moveBubble, 1000);
